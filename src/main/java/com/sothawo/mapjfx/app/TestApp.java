@@ -41,6 +41,7 @@ import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.nio.file.FileSystems;
+import java.nio.file.Paths;
 import java.util.Collections;
 import java.util.LinkedList;
 
@@ -321,7 +322,7 @@ public class TestApp extends Application {
 
     private void initOfflineCache() {
         final OfflineCache offlineCache = OfflineCache.INSTANCE;
-        offlineCache.setCacheDirectory(FileSystems.getDefault().getPath("tmpdata/cache"));
+        offlineCache.setCacheDirectory(Paths.get("tmpdata/cache"));
         offlineCache.setActive(true);
         offlineCache.setNoCacheFilters(Collections.singletonList(".*\\.sothawo\\.com/.*"));
 
